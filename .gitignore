@@ -26,3 +26,7 @@ target/
 .cargo-tools/
 
 rust-migration-notes.md
+
+.pytest_cache/
+*.egg-info/
+__pycache__/

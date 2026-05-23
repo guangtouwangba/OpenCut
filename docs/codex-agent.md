@@ -21,6 +21,23 @@ bun run codex:opencut validate --project workspace/demo.opencut.json
 Every command writes JSON to stdout. Mutation commands update `--project` in
 place unless `--out` is provided.
 
+## cli-anything Wrapper
+
+The formal cli-anything package lives in `agent-harness/` and installs the
+`cli-anything-opencut` command:
+
+```bash
+cd agent-harness
+pip install -e .
+
+cli-anything-opencut --json project new --name Demo -o workspace/demo.opencut.json
+cli-anything-opencut --json timeline add-text -p workspace/demo.opencut.json --text "Hello" --start 0 --duration 3
+cli-anything-opencut --json project validate -p workspace/demo.opencut.json
+```
+
+The wrapper delegates to the Bun harness above, so there is only one OpenCut
+project mutation implementation.
+
 ## Current Scope
 
 - Create app-compatible project JSON at the current migration version.
