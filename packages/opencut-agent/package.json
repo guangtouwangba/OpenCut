@@ -1,0 +1,9 @@
+{
+	"name": "@opencut/codex-agent",
+	"private": true,
+	"type": "module",
+	"scripts": {
+		"cli": "bun run src/cli.ts",
+		"test": "bun test src"
+	}
+}
